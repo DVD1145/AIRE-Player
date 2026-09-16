@@ -291,6 +291,45 @@ _drawRecHud(ct, opts) {
   const uiF = "px 'AppFont','Segoe UI','PingFang SC','Microsoft YaHei',sans-serif";
   const offs = this._recUiOffset || (this._recUiOffset = {});
   const S = this._recHudS || 1;
+  const uisCss = uis / S;
+  // Vertical text anchoring mirrors the DOM line boxes exactly. Those use font/line-height dependent CSS ('line-height: normal')
+  // for the title and the difficulty, so the glyph baseline offset from each box is measured ONCE per resize from the live DOM:
+  // the offset (box → glyph baseline) is invariant to the translate-only chart entrance motions, so it is cached and re-applied
+  // to the box's CSS anchor at any --uis without per-frame layout reads; the box anchor itself is pure CSS math.
+  const uiKey = Math.round(uis * 1000) + '|' + Math.round(S * 1000);
+  if (this._recUiKey !== uiKey) {
+    this._recUiKey = uiKey;
+    const measure = (elId, fontPx) => {
+      const el = document.getElementById(elId);
+      if (!el) return null;
+      ctx.font = Math.round(fontPx) + uiF;
+      const m = ctx.measureText(el.textContent && el.textContent.length ? el.textContent : 'A');
+      const fbaCss = (m.fontBoundingBoxAscent || 0) / S;
+      let rTop = null;
+      try {
+        const rng = document.createRange();
+        rng.selectNodeContents(el);
+        const rs = rng.getClientRects();
+        rTop = rs && rs.length ? rs[0].top : null;
+        if (rng.detach) rng.detach();
+      } catch (e) {}
+      const b = el.getBoundingClientRect();
+      if (!(b.width || b.height)) return null;
+      if (rTop === null) rTop = b.top;
+      return { topRel: (rTop + fbaCss) - b.top, boxH: b.height };
+    };
+    const fromBottom = (elId, fontPx) => { const x = measure(elId, fontPx); return (x && x.boxH > 0) ? Math.max(0, x.boxH - x.topRel) : null; };
+    const fromTop = (elId, fontPx) => { const x = measure(elId, fontPx); return x ? x.topRel : null; };
+    const D = this._recUiD = {};
+    D.title = fromBottom('title-display', 24 * uis);
+    D.level = fromBottom('difficulty-display', 22 * uis);
+    D.score = fromTop('score-display', 36 * uis);
+    D.combonumber = fromTop('combo-number', 54 * uis);
+    D.combo = fromTop('combo-label', 18 * 0.965 * uis);
+  }
+  const D = this._recUiD;
+  const vhCss = h / S;
+  const fallbackA = (fontPx) => Math.round(0.9 * fontPx * 10) / 10 / S;
   // Entrance window (pause / score / name / level only; progress bar, combo number and combo label are excluded). While it
   // lasts, updateUI keeps each element at the position where the last chart binding left it and slides it in with an
   // easeOutExpo translateY on top of its final position.
@@ -353,8 +392,9 @@ _drawRecHud(ct, opts) {
   if (name && name !== '-') {
     ctx.textBaseline = 'alphabetic';
     drawTF('name', '#fff', () => {
+      ctx.textAlign = 'left';
       ctx.font = (24 * uis) + uiF;
-      ctx.fillText(name, 30 * uis, h - 24 * uis);
+      ctx.fillText(name, 30 * uis, (vhCss - 18 * uisCss - (D.title != null ? D.title : 6 * uisCss)) * S);
     });
   }
   if (lv && lv !== '-') {
@@ -362,33 +402,33 @@ _drawRecHud(ct, opts) {
     drawTF('level', '#fff', () => {
       ctx.font = (22 * uis) + uiF;
       ctx.textAlign = 'right';
-      ctx.fillText(lv, w - 30 * uis, h - 24 * uis);
+      ctx.fillText(lv, w - 30 * uis, (vhCss - 18 * uisCss - (D.level != null ? D.level : 6 * uisCss)) * S);
     });
   }
 
   // Score (top-right, fixed width 7 digits, tabular)
-  ctx.textBaseline = 'top';
+  ctx.textBaseline = 'alphabetic';
   ctx.textAlign = 'right';
   drawTF('score', '#fff', () => {
     let sc;
     try { sc = this.computeScore(); } catch (e) { sc = 0; }
     sc = Math.min(1000000, Math.max(0, sc));
     ctx.font = (36 * uis) + "px 'AppFont','Segoe UI','PingFang SC','Microsoft YaHei','Consolas',monospace";
-    ctx.fillText(String(sc).padStart(7, '0'), w - 24 * uis, 20 * uis);
+    ctx.fillText(String(sc).padStart(7, '0'), w - 24 * uis, (20 * uisCss + (D.score != null ? D.score : fallbackA(ctx.font.split('px')[0]))) * S);
   });
 
   // Combo number + label (top-center); label mirrors updateScoreDisplay (AP / FC / AUTOPLAY / COMBO)
   if (this.combo >= 3) {
     ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
+    ctx.textBaseline = 'alphabetic';
     let label = this.autoplay ? 'AUTOPLAY' : 'COMBO';
     drawTF('combonumber', '#fff', () => {
       ctx.font = (54 * uis) + uiF;
-      ctx.fillText(String(this.combo), w / 2, 6 * uis);
+      ctx.fillText(String(this.combo), w / 2, (6 * uisCss + (D.combonumber != null ? D.combonumber : fallbackA(ctx.font.split('px')[0]))) * S);
     });
     drawTF('combo', '#E7E7E7', () => {
       ctx.font = (18 * 0.965 * uis) + uiF;
-      ctx.fillText(label, w / 2, 6 * uis + 52 * uis);
+      ctx.fillText(label, w / 2, (54 * uisCss + (D.combo != null ? D.combo : fallbackA(ctx.font.split('px')[0]))) * S);
     });
   }
 
