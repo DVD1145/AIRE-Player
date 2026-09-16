@@ -296,7 +296,7 @@ _drawRecHud(ct, opts) {
   // easeOutExpo translateY on top of its final position.
   const inEntrance = (key) => !!(this.uiEntrance && key !== 'bar' && key !== 'combonumber' && key !== 'combo'
     && Math.max(0, (performance.now() - this.uiEntrance.start) / this.uiEntrance.duration) < 1);
-  const entranceDist = this.uiEntrance ? (this.uiEntrance.dist * (h / Math.max(1, window.innerHeight || h))) : 0;
+  const entranceDist = this.uiEntrance ? this.uiEntrance.dist : 0;
   const holdFor = (key) => {
     const t = (this.uiTransforms || {})[key];
     let o = offs[key];
@@ -412,27 +412,26 @@ _drawRecHud(ct, opts) {
   if (opts.pauseBtn) {
     ctx.textBaseline = 'alphabetic';
     drawTF('pause', '#fff', () => {
-      const dp = this.defaultPositions.pause;
-      const bx = dp ? dp.left : 20 * uis;
-      const by = dp ? dp.top : 26 * uis;
       const isz = 30 * uis;
-      const bw = isz * (11 / 37);
-      const bhfs = isz * (39 / 41);
-      const gx = isz * (22 / 37);
-      const rad = isz * (4 / 41);
-      const bar = (x) => {
-        ctx.beginPath();
-        ctx.moveTo(x, by + rad);
-        ctx.arcTo(x, by, x + rad, by, rad);
-        ctx.arcTo(x + bw, by, x + bw, by + rad, rad);
-        ctx.lineTo(x + bw, by + bhfs - rad);
-        ctx.arcTo(x + bw, by + bhfs, x + bw - rad, by + bhfs, rad);
-        ctx.arcTo(x, by + bhfs, x, by + bhfs - rad, rad);
-        ctx.closePath();
-        ctx.fill();
-      };
-      bar(bx);
-      bar(bx + gx);
+      const vs = isz / 41;
+      const ox = (isz - 37 * vs) / 2;
+      ctx.save();
+      ctx.translate(20 * uis + ox, 26 * uis);
+      ctx.scale(vs, vs);
+      ctx.fillRect(0, 0, 11, 39);
+      ctx.fillRect(22, 0, 11, 39);
+      ctx.fillStyle = '#000';
+      ctx.beginPath();
+      ctx.moveTo(11, 2); ctx.lineTo(15, 2); ctx.lineTo(15, 41);
+      ctx.lineTo(4, 41); ctx.lineTo(4, 39); ctx.lineTo(11, 39);
+      ctx.closePath();
+      ctx.fill();
+      ctx.beginPath();
+      ctx.moveTo(33, 2); ctx.lineTo(37, 2); ctx.lineTo(37, 41);
+      ctx.lineTo(26, 41); ctx.lineTo(26, 39); ctx.lineTo(33, 39);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
     });
   }
   ctx.restore();

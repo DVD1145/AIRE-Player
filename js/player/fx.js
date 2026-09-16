@@ -223,7 +223,7 @@ _composeFxUiSrc() {
   const saved = {
     canvas: this.canvas, ctx: this.ctx, width: this.width, height: this.height, _recHudS: this._recHudS,
   };
-  this.canvas = cv; this.ctx = ctx; this.width = w; this.height = h; this._recHudS = 1;
+  this.canvas = cv; this.ctx = ctx; this.width = w; this.height = h; this._recHudS = this._dpr || 1;
   try { this._drawRecHud(this.getCurrentTime(), { pauseBtn: true }); } catch (e) { /* a broken UI draw must never break the effect */ }
   this.canvas = saved.canvas; this.ctx = saved.ctx;
   this.width = saved.width; this.height = saved.height; this._recHudS = saved._recHudS;
