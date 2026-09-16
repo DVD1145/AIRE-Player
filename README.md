@@ -100,6 +100,10 @@ AIRE-Player/
 ├── index.html           dev entry point (split layout; runs via server or double-click)
 ├── build.js             build script → dist/rpe-player.html (single file)
 ├── gen-builtin-resources.js  regenerates the embedded builtin-pack fallback
+├── README.md            documentation (English)
+├── README.zh-CN.md      documentation (简体中文)
+├── README.png           banner image used by the READMEs
+├── LICENSE              MIT license
 ├── dist/                build output
 ├── css/                 main styles + editor UI styles
 ├── fonts/               the embedded chart font (AppFont)

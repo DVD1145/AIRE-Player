@@ -82,6 +82,10 @@ AIRE-Player/
 ├── index.html           开发版入口（多文件布局；可服务器运行或双击）
 ├── build.js             构建脚本 → dist/rpe-player.html（单文件）
 ├── gen-builtin-resources.js   重新生成内置资源包回退副本
+├── README.md            文档（英文）
+├── README.zh-CN.md      文档（简体中文）
+├── README.png           README 使用的横幅图片
+├── LICENSE              MIT 许可证
 ├── dist/                构建输出
 ├── css/                 主样式 + 编辑器 UI 样式
 ├── fonts/               内嵌谱面字体（AppFont）
