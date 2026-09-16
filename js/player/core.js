@@ -122,6 +122,7 @@ class EnhancedRPEPlayer {
   this.defaultPositions = {};
   this.uiTransforms = {};
   this.uiEntrance = null;
+  this._uiHold = {};
   this.attachUIIndex = {};
   this._sortedLinesCache = null;
   this.pageZoom = 1;

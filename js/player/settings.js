@@ -134,6 +134,18 @@ captureDefaultPositions() {
     name: { el: this.uiElements.name, anchor: 'bottom-left' },
     level: { el: this.uiElements.level, anchor: 'bottom-right' },
   };
+  // Stash inline positioning/transform so the measurement is captured from the pure CSS layout,
+  // not from wherever a chart bind / entrance moved the element; otherwise after a window resize
+  // the DOM re-anchors off the moved value while the shader-composited raster stays clean → they diverge
+  const stash = [];
+  for (const info of Object.values(uiMap)) {
+    const el = info.el;
+    if (!el) continue;
+    for (const prop of ['left', 'top', 'right', 'bottom', 'transform', 'opacity', 'color']) {
+      const v = el.style.getPropertyValue(prop);
+      if (v) { stash.push([el, prop, v]); el.style.removeProperty(prop); }
+    }
+  }
   // Elements hidden by default (e.g. the combo number / label of #combo-area) report a 0x0 rect while hidden,
   // so chart bindings would write them as left:0/top:0 (top-left corner); when a 0x0 rect is detected, walk up to the hidden ancestor
   // and temporarily show it (still invisible) while measuring
@@ -156,6 +168,8 @@ captureDefaultPositions() {
     const r = el.getBoundingClientRect();
     if (r.width === 0 && r.height === 0) ensureVisible(el);
   }
+  // Force a reflow so the cleared styles take effect before measuring
+  void (document.body && document.body.offsetWidth);
   for (const [key, info] of Object.entries(uiMap)) {
     const el = info.el;
     if (!el) continue;
@@ -168,11 +182,10 @@ captureDefaultPositions() {
       anchor: info.anchor,
     };
   }
+  for (const s of stash) { s[0].style[s[1]] = s[2]; }
   for (const el of tmpVisible) {
     el.style.display = '';
     el.style.visibility = '';
   }
-  // 'Stay where the event ended' state for UI position bindings
-  this._uiHold = {};
 }
 });
