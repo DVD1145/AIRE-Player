@@ -85,7 +85,8 @@ AIRE-Player/
 ├── README.md            文档（英文）
 ├── README.zh-CN.md      文档（简体中文）
 ├── README.png           README 使用的横幅图片
-├── LICENSE              MIT 许可证
+├── LICENSE              GPL-3.0 许可证
+├── THIRD_PARTY.md       第三方 / 内置资源归属声明
 ├── dist/                构建输出
 ├── css/                 主样式 + 编辑器 UI 样式
 ├── fonts/               内嵌谱面字体（AppFont）
@@ -120,4 +121,4 @@ AIRE-Player/
 
 ## 许可证
 
-MIT——见 [LICENSE](LICENSE)。
+GPL-3.0——见 [LICENSE](LICENSE)。内置的第三方库、字体与资源包资源遵循各自的许可证和/或版权归属——见 [THIRD_PARTY.md](THIRD_PARTY.md)。

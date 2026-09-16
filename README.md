@@ -103,7 +103,8 @@ AIRE-Player/
 ├── README.md            documentation (English)
 ├── README.zh-CN.md      documentation (简体中文)
 ├── README.png           banner image used by the READMEs
-├── LICENSE              MIT license
+├── LICENSE              GPL-3.0 license
+├── THIRD_PARTY.md       third-party / bundled-asset attributions
 ├── dist/                build output
 ├── css/                 main styles + editor UI styles
 ├── fonts/               the embedded chart font (AppFont)
@@ -145,4 +146,6 @@ build still emits a working standalone file with `node build.js`.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+GPL-3.0 — see [LICENSE](LICENSE). Bundled libraries, fonts and resource-pack
+assets have separate licenses and/or copyright holders — see
+[THIRD_PARTY.md](THIRD_PARTY.md).
