@@ -305,6 +305,23 @@ _drawRecHud(ct, opts) {
       ctx.font = Math.round(fontPx) + uiF;
       const m = ctx.measureText(el.textContent && el.textContent.length ? el.textContent : 'A');
       const fbaCss = (m.fontBoundingBoxAscent || 0) / S;
+      // The combo number/label live in #combo-area which is display:none until combo>=3; at the first
+      // _drawRecHud (chart start) the box is 0x0, so temporarily reveal the hidden ancestor — still
+      // invisible — exactly like captureDefaultPositions does, then restore it afterwards.
+      const tmpVisible = [];
+      const revealHidden = (node) => {
+        while (node && node.nodeType === 1) {
+          if (getComputedStyle(node).display === 'none') {
+            node.style.display = 'block';
+            node.style.visibility = 'hidden';
+            tmpVisible.push(node);
+            return;
+          }
+          node = node.parentElement;
+        }
+      };
+      const b0 = el.getBoundingClientRect();
+      if (!(b0.width || b0.height)) revealHidden(el);
       let rTop = null;
       try {
         const rng = document.createRange();
@@ -314,8 +331,12 @@ _drawRecHud(ct, opts) {
         if (rng.detach) rng.detach();
       } catch (e) {}
       const b = el.getBoundingClientRect();
-      if (!(b.width || b.height)) return null;
+      if (!(b.width || b.height)) {
+        for (const n of tmpVisible) { n.style.display = ''; n.style.visibility = ''; }
+        return null;
+      }
       if (rTop === null) rTop = b.top;
+      for (const n of tmpVisible) { n.style.display = ''; n.style.visibility = ''; }
       return { topRel: (rTop + fbaCss) - b.top, boxH: b.height };
     };
     const fromBottom = (elId, fontPx) => { const x = measure(elId, fontPx); return (x && x.boxH > 0) ? Math.max(0, x.boxH - x.topRel) : null; };
@@ -372,9 +393,26 @@ _drawRecHud(ct, opts) {
       ey = Math.round(d * (1 - eased) * entranceDist);
     }
     ctx.save();
+    // Rotate/scale about the element's own center (CSS transform-origin:center), not the canvas
+    // origin: the DOM applies `transform: translate(dx,dy) rotate(r)` with the element centered, so
+    // the raster must pivot at the element center too or the two diverge under chart rotation events.
+    const dp = this.defaultPositions[key];
+    let pcx = 0, pcy = 0;
+    if (dp) {
+      // Per-key CSS transform-origin: everything is center except the progress bar which is `left`
+      if (key === 'bar') {
+        pcx = dp.left || 0;
+        pcy = (dp.top || 0) + (window.innerHeight - (dp.top || 0) - (dp.bottom || 0)) / 2;
+      } else {
+        pcx = (dp.left || 0) + (window.innerWidth - (dp.left || 0) - (dp.right || 0)) / 2;
+        pcy = (dp.top || 0) + (window.innerHeight - (dp.top || 0) - (dp.bottom || 0)) / 2;
+      }
+    }
     ctx.translate(o.dx * S, (o.dy + ey) * S);
+    ctx.translate(pcx * S, pcy * S);
     ctx.rotate(rot * Math.PI / 180);
     if (sc) ctx.scale(sc[0], sc[1]);
+    ctx.translate(-pcx * S, -pcy * S);
     ctx.globalAlpha = Math.max(0, Math.min(1, alpha));
     // Chart color events tint the text; without one the element keeps its default CSS fill
     ctx.fillStyle = color ? 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')' : defFill;
