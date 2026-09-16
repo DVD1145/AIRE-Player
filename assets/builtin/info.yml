@@ -1,0 +1,8 @@
+name: "Phigros Official"
+author: PigeonGames
+hitFx: [5, 6]
+holdAtlas: [50, 50]
+holdAtlasMH: [98, 98]
+#以下为AiRE扩展信息段
+#colorPerfect(HitVFX): #ffec9f
+#colorGood(HitVFX): #b4e1ff

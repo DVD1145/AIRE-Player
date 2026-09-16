@@ -1,0 +1,13 @@
+# build output
+dist/
+
+# dev server artifacts
+_serve.js
+
+# node
+node_modules/
+
+# misc
+*.log
+.DS_Store
+Thumbs.db
