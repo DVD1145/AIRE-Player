@@ -28,7 +28,7 @@ single-file build and open it locally.
 
 ## Demo
 
-A chart with an animated video background and hit particle effects, roughly 2560×1440:
+A chart with an animated video background and hit particle effects:
 
 <table><tr>
 <td width="50%"><img src="assets/demos/wh-1.png" width="100%"></td>

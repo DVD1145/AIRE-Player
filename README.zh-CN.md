@@ -25,7 +25,7 @@ PhiAI-Player 解析 `.pez` / `.pec` / `.json` 谱面包,并在 `<canvas>` 上实
 
 ## 演示
 
-游玩带动画视频背景与打击粒子特效的谱面(约 2560×1440):
+游玩带动画视频背景与打击粒子特效的谱面:
 
 <table><tr>
 <td width="50%"><img src="assets/demos/wh-1.png" width="100%"></td>
