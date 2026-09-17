@@ -27,18 +27,19 @@ No registration, no download, no install.
 
 ---
 
-## Why PhiAI-Player?
+## What makes PhiAI-Player?
 
-| | Sim-Phi / PhiZone (mods) | PhiAI-Player |
-| --- | --- | --- |
-| Runtime | needs a game + patch | **any modern browser** |
-| Chart formats | mostly one engine | **`.pez` / `.pec` / `.zip` / folder drop** |
-| Playback | fixed view | **turntable + auto-detect Phi format** |
-| Single-file build | no | **yes — double-click `dist/rpe-player.html`** |
-| Custom skins / packs | limited | **bundled resource pack + `.zip` pack loader** |
+A **self-contained player** — not a mod, not a patch to an existing game. It turns chart
+files into playable rhythm gameplay anywhere a browser runs:
 
-Not a mod, not an emulator that re-skins an existing game — a **self-contained player** that
-turns chart files into playable rhythm gameplay anywhere a browser runs.
+- **Runs anywhere** — any modern browser, desktop or phone; nothing to install
+- **Chart formats** — `.pez` / `.pec` / `.json`, single files or whole folders; Phi format
+  auto-detected and converted on load
+- **Two play views** — turntable-style angle plus full-screen keyboard / pointer play
+- **Single-file build** — `node build.js` produces `dist/rpe-player.html`, a standalone file
+  you can double-click
+- **Your own look** — bundled default resource pack, plus `.zip` packs for custom notes
+  skins, hitsounds, lyrics and animated backgrounds
 
 > **About the name:** the original prototype was a quick reading tool thrown together with an
 > LLM ("phi… AI" → the working name stuck). PhiAI-Player itself ships **no cloud AI** — it
