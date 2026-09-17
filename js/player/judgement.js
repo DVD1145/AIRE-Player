@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/judgement.js
+// PhiAI-Player || js/player/judgement.js
 // EnhancedRPEPlayer instance methods (judgeNoteTime, noteSoundKey, playNoteSounds, evalControl, commitJudgement, updateNotes, judgeNote, judgeFXPos, addJudgeEffect, hexToRgb, updateEffects) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   judgeNoteTime(timeDiff, note) {

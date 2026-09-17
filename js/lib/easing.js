@@ -1,4 +1,4 @@
-// AIRE-Player | Easing table
+// PhiAI-Player || Easing table
 const Easing = (() => {
   return [
     t=>t, t=>t,

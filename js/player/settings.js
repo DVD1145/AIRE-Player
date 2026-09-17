@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/settings.js
+// PhiAI-Player || js/player/settings.js
 // EnhancedRPEPlayer instance methods (loadSettings, saveSettings, applySettings, applyJudgementScale, setupSettingsListeners, captureDefaultPositions) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   loadSettings() {

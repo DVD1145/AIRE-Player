@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/ui.js
+// PhiAI-Player || js/player/ui.js
 // EnhancedRPEPlayer instance methods (updateFileStatus, showPauseOverlay, hidePauseOverlay, retryChart, backToMenu, updateTitleAndDifficulty, startUIEntrance, updateUI, updateMissingBadge) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   updateFileStatus(name, loaded, msg = '') {

@@ -1,4 +1,4 @@
-// AIRE-Player | GIF 89a frame decoder (omggif, (c) Dean McNamee, MIT)
+// PhiAI-Player || GIF 89a frame decoder (omggif, (c) Dean McNamee, MIT)
 /* GIF 89a decoder (omggif, (c) Dean McNamee, MIT): per-frame extraction for judge line GIF textures and gifEvents playback progress control */
 "use strict";
 function GifReader(buf) {

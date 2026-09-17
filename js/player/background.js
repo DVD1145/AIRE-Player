@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/background.js
+// PhiAI-Player || js/player/background.js
 // EnhancedRPEPlayer instance methods (renderFluidBackground, cleanupBGA, setupBGA, updateBGA) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   renderFluidBackground(ctx, w, h) {

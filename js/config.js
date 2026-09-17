@@ -1,4 +1,4 @@
-// AIRE-Player | js/config.js
+// PhiAI-Player || js/config.js
 // Dev/split-mode configuration. Define resource paths and audio references.
 window.AIRE_SFX = {
   boot:    'assets/sounds/boot.wav',

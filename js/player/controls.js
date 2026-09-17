@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/controls.js
+// PhiAI-Player || js/player/controls.js
 // EnhancedRPEPlayer instance methods (initKeyboardInput, keyboardHit, initPointerInput, noteHitRadius, findNoteForTap, handleTap) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   initKeyboardInput() {

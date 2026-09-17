@@ -1,7 +1,7 @@
 [简体中文](README.zh-CN.md) · **English**
 
 <p align="center">
-  <img src="README.png" alt="AIRE-Player">
+  <img src="README.png" alt="PhiAI-Player">
 </p>
 
 A browser-based player for RPE / Phigros-style rhythm charts. Drop a chart pack or file on
@@ -11,6 +11,8 @@ optional WebGL post-processing effects.
 
 The project lives here as an editable multi-file codebase, with a build step that collapses
 everything back into one self-contained HTML file you can run by double-clicking.
+
+> **PhiAI-Player** was formerly named **AIRE-Player**.
 
 ## Background
 
@@ -89,14 +91,15 @@ fully standalone file that runs from disk with a double-click.
 | `Esc` | back to the load screen (pauses playback) |
 | Pause button | play / pause |
 
-The play-UI editor (top-right grid-icon button, *游玩UI编辑器*) lets you reposition HUD
-elements, add your own, and export or import a custom layout as ZIP. Arrow keys move the
-selected element, `Del`/`Backspace` removes it.
+> **Play-UI editor (游玩UI编辑器): disabled.** The source files (`js/uie.js`, `css/uie.css`)
+> are kept in the repo for reference but are no longer loaded or invoked — the feature is
+> retired because it was hard to maintain, had functional bugs, and could be used to fake
+> play results, which is against the rules.
 
 ## Repository layout
 
 ```
-AIRE-Player/
+PhiAI-Player/
 ├── index.html           dev entry point (split layout; runs via server or double-click)
 ├── build.js             build script → dist/rpe-player.html (single file)
 ├── gen-builtin-resources.js  regenerates the embedded builtin-pack fallback
@@ -121,7 +124,7 @@ AIRE-Player/
     │                  ui, controls, recording)
     ├── bootstrap.js   top-level wiring: canvas, drop handlers, player bootstrap
     ├── splash.js      splash overlay animation
-    └── uie.js         editor / settings UI glue
+    └── uie.js         (retired) editor / settings UI glue — no longer loaded
 ```
 
 The class definition lives in `js/player/core.js` (constructor included); every other

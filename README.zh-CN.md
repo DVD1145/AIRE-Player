@@ -1,12 +1,14 @@
 [English](README.md) · **简体中文**
 
 <p align="center">
-  <img src="README.png" alt="AIRE-Player">
+  <img src="README.png" alt="PhiAI-Player">
 </p>
 
 一个运行于浏览器的 RPE / Phigros 风格音游谱面播放器。把谱面包或文件拖到页面上，它会解析谱面包、加载音频与图片，并在 `<canvas>` 上实时渲染游玩画面——下落音符、判定线、连击、计分、打击音效，以及可选的 WebGL 后期特效。
 
 本项目以可编辑的多文件代码库形式存在，并附带一个构建步骤，可将所有内容重新打包回一个自包含的 HTML 文件，双击即可运行。
+
+> **PhiAI-Player** 原名为 **AIRE-Player**。
 
 ## 背景
 
@@ -73,12 +75,12 @@ node build.js
 | `Esc` | 返回加载界面（暂停播放） |
 | 暂停按钮 | 播放 / 暂停 |
 
-游玩 UI 编辑器（右上角网格图标，*游玩UI编辑器*）可重新摆放 HUD 元素、添加自定义元素，并可将自定义布局导出/导入为 ZIP。方向键移动选中元素，`Del`/`Backspace` 删除。
+> **游玩 UI 编辑器（游玩UI编辑器）：已停用。** 相关源文件（`js/uie.js`、`css/uie.css`）保留在仓库中用于参考，但不再加载、不再调用。停用原因：维护困难、存在功能 bug，且可被用于伪造游玩成绩，构成违规风险。
 
 ## 仓库结构
 
 ```
-AIRE-Player/
+PhiAI-Player/
 ├── index.html           开发版入口（多文件布局；可服务器运行或双击）
 ├── build.js             构建脚本 → dist/rpe-player.html（单文件）
 ├── gen-builtin-resources.js   重新生成内置资源包回退副本
@@ -103,7 +105,7 @@ AIRE-Player/
     │                       ui、controls、recording）
     ├── bootstrap.js     顶层接线：canvas、拖放处理、播放器启动
     ├── splash.js        启动动画
-    └── uie.js           编辑器 / 设置 UI 胶水
+    └── uie.js           （已停用）编辑器 / 设置 UI 胶水——不再加载
 ```
 
 类定义位于 `js/player/core.js`（含构造函数）；其余每个 `js/player/*` 文件都是一小段 `Object.assign(EnhancedRPEPlayer.prototype, …)`，因此脚本按顺序加载后，播放器仍表现为一个类。脚本顺序很重要——`index.html` 中按必需的顺序列出。

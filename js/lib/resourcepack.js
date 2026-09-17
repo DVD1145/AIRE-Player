@@ -1,4 +1,4 @@
-// AIRE-Player | Resource pack (.zip) loader for note skins / audio
+// PhiAI-Player || Resource pack (.zip) loader for note skins / audio
 class ResourcePackLoader {
   static async loadFromZip(file) {
     console.log('[RP] 开始加载资源包:', file.name);
@@ -17,9 +17,10 @@ class ResourcePackLoader {
     const cleanYaml = yamlText.replace(/^\uFEFF/, '');
     console.log('[RP] info.yml 原始内容 (前200字符):', cleanYaml.substring(0, 200));
 
-    const extensionMarker = '#以下为AiRE扩展信息段';
-    const extensionEnabled = cleanYaml.includes(extensionMarker);
-    console.log('[RP] AiRE 扩展启用:', extensionEnabled);
+    const extensionMarkerPhi = '#以下为PhiAI扩展信息段';
+    const extensionMarkerOld = '#以下为AiRE扩展信息段';
+    const extensionEnabled = cleanYaml.includes(extensionMarkerPhi) || cleanYaml.includes(extensionMarkerOld);
+    console.log('[RP] PhiAI 扩展启用:', extensionEnabled);
 
     let info;
     try {

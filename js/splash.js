@@ -1,11 +1,15 @@
-// AIRE-Player | js/splash.js
+// PhiAI-Player | js/splash.js
 // Splash overlay + boot audio. `AIRE_SFX` is defined in js/config.js and inlined at build time.
+// The splash logo (cropped logo.svg) is pure vector `<path>` strokes that carry their home
+// position in a `translate(x,y)` attribute -- exactly like the original AIRE splash. So the
+// original animation is fully preserved: every stroke is gathered to the centre point, then
+// while the logo blinks each stroke flies back to its own spot with an ease-out-expo.
 (function () {
   var ov = document.getElementById('splash-overlay');
   if (!ov) return;
   var svg = document.getElementById('splash-svg');
   var paths = Array.prototype.slice.call(svg.querySelectorAll('path')).filter(function (p) { return p.getAttribute('d'); });
-  var CX = 3579 / 2, CY = 722 / 2;
+  var CX = 3391 / 2, CY = 628 / 2;
   var orig = paths.map(function (p) {
     var m = /translate\(\s*([-\d.]+)\s*,\s*([-\d.]+)\s*\)/.exec(p.getAttribute('transform') || '');
     return m ? { x: parseFloat(m[1]), y: parseFloat(m[2]) } : { x: 0, y: 0 };
@@ -80,4 +84,3 @@
   })();
   seq.catch(function () { ov.style.display = 'none'; });
 })();
-

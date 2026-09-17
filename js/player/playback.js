@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/playback.js
+// PhiAI-Player || js/player/playback.js
 // EnhancedRPEPlayer instance methods (toggleAutoplay, togglePlay, play, playFallback, pause, _streamLoad, _parseStreamBucket, reset, restart, getCurrentTime, getCurrentBeat, resumeWithCountdown, warmupChart, startPreview, animate, updateJudgeLines) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   toggleAutoplay() {

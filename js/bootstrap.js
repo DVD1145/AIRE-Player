@@ -1,4 +1,4 @@
-// AIRE-Player | js/bootstrap.js
+// PhiAI-Player || js/bootstrap.js
 // Top-level bootstrap: wires the canvas, UI file inputs, recording and the player instance.
 // ============================================================
 //  Settings modal control
@@ -393,16 +393,16 @@ async function afterLoad() {
         '拆线？我拆拆拆拆拆拆拆！',
         '*Tip.txt -记事本',
         '你说这个很卡...怎么不看看他基于什么呜呜呜....',
-        '冷知识，AIRE最初只是随便用AI做的读取器',
-        '从明天开始游玩AIRE 2小时将会收费5元，25元可永久使用。',
+        '冷知识，PhiAI-Player最初只是随便用AI做的读取器',
+        '从明天开始游玩PhiAI 2小时将会收费5元，25元可永久使用。',
         '豆包豆包帮我生成一个网页格式的Phigros网页模拟器。',
         '本回答由 Tip: 生成，内容仅供参考，请仔细甄别',
         '细看你会发现他正在加载',
         '本项目DSv4v3R1Hy3TRAEGLM53',
         '广告招租位 联系电话+13 25733473',
         '点击视频下方链接即可玩到主播同款。',
-        '在AIREplayer -0.9999.9.99版本中，他根本就没有发布出来。',
-        '这是一条来自AIREplayer的Tip!',
+        '在PhiAIplayer -0.9999.9.99版本中，他根本就没有发布出来。',
+        '这是一条来自PhiAIplayer的Tip!',
         'XX.XXX!',
         '/bx',
         '本轮Tip话题已到上限，请开启新话题。',

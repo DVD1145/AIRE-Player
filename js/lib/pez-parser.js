@@ -1,4 +1,4 @@
-// AIRE-Player | .pez chart pack parser
+// PhiAI-Player || .pez chart pack parser
 class PEZParser {
   constructor() {
     this.zip = null; this.info = null; this.chart = null;

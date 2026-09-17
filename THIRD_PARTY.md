@@ -1,6 +1,6 @@
 # THIRD PARTY NOTICES
 
-AIRE-Player Copyright (c) 2026 AIRE-Player contributors. This program is free
+PhiAI-Player Copyright (c) 2026 PhiAI-Player contributors (formerly AIRE-Player). This program is free
 software, released under the **GNU General Public License v3.0** — see
 [LICENSE](LICENSE).
 

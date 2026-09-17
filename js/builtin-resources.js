@@ -1,4 +1,4 @@
-// AIRE-Player | js/builtin-resources.js (GENERATED FILE - DO NOT EDIT)
+// PhiAI-Player | js/builtin-resources.js (GENERATED FILE - DO NOT EDIT)
 // Regenerate with: node gen-builtin-resources.js
 // Inline copy of assets/builtin/* as base64. Used as a fallback when fetch() is unavailable
 // (file:// protocol); the canonical files live in assets/builtin/ and are used over HTTP.

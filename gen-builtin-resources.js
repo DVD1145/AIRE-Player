@@ -1,4 +1,4 @@
-// AIRE-Player | gen-builtin-resources.js
+// PhiAI-Player | gen-builtin-resources.js
 // Regenerates js/builtin-resources.js from the files in assets/builtin/*.
 // The sidecar embeds the default resource pack as base64 so the split repository still
 // applies the default skin/hitsounds when opened directly via file:// (where fetch() is
@@ -20,7 +20,7 @@ for (const f of fs.readdirSync(builtinDir).sort()) {
 }
 
 const out =
-  '// AIRE-Player | js/builtin-resources.js (GENERATED FILE - DO NOT EDIT)\n' +
+  '// PhiAI-Player | js/builtin-resources.js (GENERATED FILE - DO NOT EDIT)\n' +
   '// Regenerate with: node gen-builtin-resources.js\n' +
   '// Inline copy of assets/builtin/* as base64. Used as a fallback when fetch() is unavailable\n' +
   '// (file:// protocol); the canonical files live in assets/builtin/ and are used over HTTP.\n' +

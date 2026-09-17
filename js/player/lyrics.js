@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/lyrics.js
+// PhiAI-Player || js/player/lyrics.js
 // EnhancedRPEPlayer instance methods (_renderLyricLine, _updateLyricChars, _lyricLineStart, updateLyric) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   _renderLyricLine(el, line, ct) {

@@ -1,4 +1,4 @@
-// AIRE-Player | General-purpose particle system
+// PhiAI-Player || General-purpose particle system
 // ============================================================
 //  General-purpose particle system
 // ============================================================

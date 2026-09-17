@@ -1,4 +1,4 @@
-// AIRE-Player | Chart/file parsers (PEC / PCMY / info / LRC) and math helpers
+// PhiAI-Player || Chart/file parsers (PEC / PCMY / info / LRC) and math helpers
 function tripleToBeat(t) { return t[0] + (t[2] ? t[1] / t[2] : 0); }
 
 function parsePEC(text) {

@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/assets.js
+// PhiAI-Player || js/player/assets.js
 // EnhancedRPEPlayer instance methods (loadResourcePack, loadBuiltinPack, splitHoldTextures, resolveAsset, preloadHitsounds) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   async loadResourcePack(file) {

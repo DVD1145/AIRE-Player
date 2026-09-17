@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/recording.js
+// PhiAI-Player || js/player/recording.js
 // EnhancedRPEPlayer instance methods (startChartRecording, stopChartRecording, _restoreRec, chartNameForFile, _setupRecAudio, _cleanupRecAudio, _drawRecHud) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   startChartRecording(w, h, quality = 1, fps = 60) {

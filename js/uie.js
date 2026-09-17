@@ -1,4 +1,4 @@
-// AIRE-Player | js/uie.js
+// PhiAI-Player || js/uie.js
 // Settings / editor UI glue for the split (dev) layout. Same code is inlined by build.js.
 (function () {
 'use strict';

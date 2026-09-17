@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/scoring.js
+// PhiAI-Player || js/player/scoring.js
 // EnhancedRPEPlayer instance methods (accuracy, computeScore, _sortedDrawLines, _setStyle, _setComboLabel, updateScoreDisplay, updateAutoplayStatus) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   accuracy() {

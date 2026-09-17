@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/loaders.js
+// PhiAI-Player || js/player/loaders.js
 // EnhancedRPEPlayer instance methods (loadZipFile, loadChartZipFile, finishLoadChart, loadLyricsFromFiles, loadPEZ, loadRPE, loadPEC, cleanup, loadChartFolder, readChartMetaFile, firstAudioFile, firstImageFile, loadImageEventsFromZip, warmImages, loadFontFromFolder) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   async loadZipFile(file) {

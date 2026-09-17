@@ -584,7 +584,7 @@ font-family: 'AppFont', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif
   .pause-act svg { width: 44px; height: 44px; }
 }
 
-  /* Splash animation: a full-black mask plus the opening logo, whose sub-objects converge / flash / return to place / fade out */
+  /* Splash animation: a full-black mask plus the opening logo, which fades in, pauses, then fades out */
   body { background: #000; }
   #splash-overlay {
     position: fixed; inset: 0;
@@ -595,5 +595,5 @@ font-family: 'AppFont', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif
     transition: opacity 0.8s ease;
   }
   #splash-overlay.splash-done { opacity: 0; }
-  #splash-svg { width: min(60vw, calc(60vh * 3579 / 722)); height: auto; display: block; }
+  #splash-svg { width: min(60vw, calc(60vh * 3391 / 628)); height: auto; display: block; }
 

@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/chart.js
+// PhiAI-Player || js/player/chart.js
 // EnhancedRPEPlayer instance methods (isPhiChart, convertPhiChart, loadChart, buildNoteObject) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   isPhiChart(jsonData) {

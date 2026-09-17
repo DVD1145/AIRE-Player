@@ -1,4 +1,4 @@
-// AIRE-Player | TTML lyric parser
+// PhiAI-Player || TTML lyric parser
 function parseTTMLLyrics(text) {
   const out = [];
   for (const raw of String(text || '').split(/\r?\n/)) {

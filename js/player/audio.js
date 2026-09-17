@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/audio.js
+// PhiAI-Player || js/player/audio.js
 // EnhancedRPEPlayer instance methods (setupAudio, setupBackground, waitBackground, ensureAudioAnalyser, playSound, flushSfx, _ensureSfxChain, _spawnSfx) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   setupAudio(blob) {

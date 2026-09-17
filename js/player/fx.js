@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/fx.js
+// PhiAI-Player || js/player/fx.js
 // EnhancedRPEPlayer instance methods (parseEffects, initFX, compileFXProgram, ensureFXProgram, buildFXFBOs, lerpFXValue, evalFXVar, updateFX, _setFxGlobalZ, _composeFxUiSrc, renderFX, hideFX) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   parseEffects() {

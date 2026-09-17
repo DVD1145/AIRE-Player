@@ -1,4 +1,4 @@
-// AIRE-Player build script
+// PhiAI-Player build script
 // Reassembles the split repository (index.html + css/js/assets) into a single, self-contained
 // rpe-player.html — every image, font, sound and resource is inlined as a base64 data URI, so
 // the produced file runs standalone (double-click, no server required).
@@ -50,21 +50,18 @@ function inlineCss(srcRef) {
   return css;
 }
 const mainCssInline  = inlineCss('css/main.css');
-const uieCssInline   = read('css/uie.css');
 
 // ---------------------------------------------------------------------------
 // 3. Assemble <head>
 // ---------------------------------------------------------------------------
 const favicon = base64('assets/favicon.png', 'image/png');
-const title = (headContent.match(/<title>([^<]*)<\/title>/) || [])[1] || 'AIRE-PLAYER';
+const title = (headContent.match(/<title>([^<]*)<\/title>/) || [])[1] || 'PhiAI-Player';
 const builtHead =
   '<head>\n' +
   '  <meta charset="utf-8">\n' +
   '  <title>' + title + '</title>\n' +
   '  <link rel="icon" href="' + favicon + '" type="image/png">\n' +
   '  <style>\n' + mainCssInline + '\n' +
-  '  </style>\n' +
-  '  <style id="uie-css">\n' + uieCssInline + '\n' +
   '  </style>\n' +
   '</head>';
 
@@ -122,7 +119,7 @@ for (const src of scriptSrcs) {
 const builtScripts = scriptsInline.map((js) => '  <script>\n' + js + '\n  </script>').join('\n')
 
 // ---------------------------------------------------------------------------
-// 6. Splash overlay div + splash script + uie script stay as-is (inlined above)
+// 6. Splash overlay div + splash script stay as-is (inlined above)
 // ---------------------------------------------------------------------------
 
 // ---------------------------------------------------------------------------

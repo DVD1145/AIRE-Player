@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/rendering.js
+// PhiAI-Player || js/player/rendering.js
 // EnhancedRPEPlayer instance methods (render, updatePaintLine, drawLineDebug, tintImage, drawJudgeLine, _flushTapBatch, drawNotesOnLine, roundedRect, rotatedTex, preTintedBody, drawNoteImage, drawImageEvents, drawTextEvent, drawJudgeEffect) attached to the prototype.
 Object.assign(EnhancedRPEPlayer.prototype, {
   render(beat, currentTime) {

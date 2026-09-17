@@ -1,4 +1,4 @@
-// AIRE-Player | js/player/core.js
+// PhiAI-Player || js/player/core.js
 // EnhancedRPEPlayer class definition + the small core methods (sizing, particles, page metrics).
 // All remaining instance methods are attached to the prototype by sibling feature files.
 class EnhancedRPEPlayer {
