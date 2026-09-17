@@ -26,6 +26,14 @@ single-file build and open it locally.
 
 ---
 
+## Demo
+
+Playing a chart with an animated video background and hit particle effects:
+
+<video src="demo.mp4" width="720" controls></video>
+
+---
+
 ## About the name
 
 The project name comes from an early prototype, a quick chart-reading tool built with an LLM.
