@@ -27,7 +27,7 @@ PhiAI-Player 解析 `.pez` / `.pec` / `.json` 谱面包,并在 `<canvas>` 上实
 
 游玩一个带有动画视频背景与打击粒子特效的谱面:
 
-<video src="demo.mp4" width="720" controls></video>
+<img src="demo.gif" width="720" alt="PhiAI-Player 游玩演示">
 
 ---
 

@@ -30,7 +30,7 @@ single-file build and open it locally.
 
 Playing a chart with an animated video background and hit particle effects:
 
-<video src="demo.mp4" width="720" controls></video>
+<img src="demo.gif" width="720" alt="PhiAI-Player gameplay demo">
 
 ---
 
