@@ -25,9 +25,28 @@ PhiAI-Player 解析 `.pez` / `.pec` / `.json` 谱面包,并在 `<canvas>` 上实
 
 ## 演示
 
-游玩一个带有动画视频背景与打击粒子特效的谱面:
+游玩带动画视频背景与打击粒子特效的谱面(约 2560×1440):
 
-<img src="demo.gif" width="720" alt="PhiAI-Player 游玩演示">
+<table><tr>
+<td width="50%"><img src="assets/demos/wh-1.png" width="100%"></td>
+<td width="50%"><img src="assets/demos/wh-2.png" width="100%"></td>
+</tr><tr>
+<td colspan="2" align="center"><sub>谱面作者: <b>WH_Constantinxx</b> — <a href="https://www.bilibili.com/video/BV1wL411r7dy">发布视频</a></sub></td>
+</tr></table>
+
+<table><tr>
+<td width="50%"><img src="assets/demos/knyorg-1.png" width="100%"></td>
+<td width="50%"><img src="assets/demos/knyorg-2.png" width="100%"></td>
+</tr><tr>
+<td colspan="2" align="center"><sub>谱面作者: <b>KNYORG</b>《without colorful passion》 — <a href="https://www.bilibili.com/video/BV1AoWZeWEHP">发布视频</a></sub></td>
+</tr></table>
+
+<table><tr>
+<td width="50%"><img src="assets/demos/pingze-1.png" width="100%"></td>
+<td width="50%"><img src="assets/demos/pingze-2.png" width="100%"></td>
+</tr><tr>
+<td colspan="2" align="center"><sub>谱面作者: <b>平泽巡森尼</b> — <a href="https://www.bilibili.com/video/BV1LFYYeZEiV">发布视频</a></sub></td>
+</tr></table>
 
 ---
 

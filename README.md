@@ -28,9 +28,28 @@ single-file build and open it locally.
 
 ## Demo
 
-Playing a chart with an animated video background and hit particle effects:
+A chart with an animated video background and hit particle effects, roughly 2560×1440:
 
-<img src="demo.gif" width="720" alt="PhiAI-Player gameplay demo">
+<table><tr>
+<td width="50%"><img src="assets/demos/wh-1.png" width="100%"></td>
+<td width="50%"><img src="assets/demos/wh-2.png" width="100%"></td>
+</tr><tr>
+<td colspan="2" align="center"><sub>Chart by <b>WH_Constantinxx</b> — <a href="https://www.bilibili.com/video/BV1wL411r7dy">release video</a></sub></td>
+</tr></table>
+
+<table><tr>
+<td width="50%"><img src="assets/demos/knyorg-1.png" width="100%"></td>
+<td width="50%"><img src="assets/demos/knyorg-2.png" width="100%"></td>
+</tr><tr>
+<td colspan="2" align="center"><sub>Chart by <b>KNYORG</b> "without colorful passion" — <a href="https://www.bilibili.com/video/BV1AoWZeWEHP">release video</a></sub></td>
+</tr></table>
+
+<table><tr>
+<td width="50%"><img src="assets/demos/pingze-1.png" width="100%"></td>
+<td width="50%"><img src="assets/demos/pingze-2.png" width="100%"></td>
+</tr><tr>
+<td colspan="2" align="center"><sub>Chart by <b>平泽巡森尼</b> — <a href="https://www.bilibili.com/video/BV1LFYYeZEiV">release video</a></sub></td>
+</tr></table>
 
 ---
 
