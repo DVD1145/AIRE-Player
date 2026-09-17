@@ -48,7 +48,7 @@ A chart with an animated video background and hit particle effects, roughly 2560
 <td width="50%"><img src="assets/demos/pingze-1.png" width="100%"></td>
 <td width="50%"><img src="assets/demos/pingze-2.png" width="100%"></td>
 </tr><tr>
-<td colspan="2" align="center"><sub>Chart by <b>平泽巡森尼</b> — <a href="https://www.bilibili.com/video/BV1LFYYeZEiV">release video</a></sub></td>
+<td colspan="2" align="center"><sub>Chart by <b>平方秒和立方吨</b> — <a href="https://www.bilibili.com/video/BV1LFYYeZEiV">release video</a></sub></td>
 </tr></table>
 
 ---
