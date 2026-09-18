@@ -564,24 +564,24 @@ font-family: 'AppFont', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif
   opacity: 1; pointer-events: auto;
   backdrop-filter: blur(14px) saturate(1.1);
 }
-.pause-menu { display: flex; gap: 96px; align-items: center; }
+.pause-menu { display: flex; gap: clamp(40px, 11vmin, 120px); align-items: center; }
 .pause-act {
   background: none; border: none; padding: 0;
   color: #fff; cursor: pointer; opacity: 0;
   transition: opacity .5s cubic-bezier(.19,1,.22,1);
 }
 #pause-overlay.show .pause-act { opacity: 1; }
-.pause-act svg { width: 64px; height: 64px; fill: #fff; display: block; }
+.pause-act svg { width: clamp(40px, 8vmin, 80px); height: clamp(40px, 8vmin, 80px); fill: #fff; display: block; }
 #countdown-a, #countdown-b {
   position: fixed; top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 120px; color: #fff;
+  font-size: clamp(48px, 12vmin, 120px); color: #fff;
   opacity: 0; z-index: 10001; pointer-events: none;
   transition: none;
 }
 @media (max-width: 640px) {
-  .pause-menu { gap: 48px; }
-  .pause-act svg { width: 44px; height: 44px; }
+  .pause-menu { gap: clamp(24px, 8vmin, 48px); }
+  .pause-act svg { width: clamp(32px, 8vmin, 48px); height: clamp(32px, 8vmin, 48px); }
 }
 
   /* Splash animation: a full-black mask plus the opening logo, which fades in, pauses, then fades out */
